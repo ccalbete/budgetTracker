@@ -19,17 +19,16 @@ function Login({navigation}) {
     }
 
     const handleChangeUsername = (e) => {
-        setNewValues({ ...newValues, 'username': e.target.value });
+        setNewValues({ ...newValues, 'username': e });
         setShowErrorEmptyFields(false);
     }
 
     const handleChangePassword = (e) => {
-        setNewValues({ ...newValues, 'password': e.target.value });
+        setNewValues({ ...newValues, 'password': e });
         setShowErrorEmptyFields(false);
     }
   
     const attemptLogin = async () => {
-
         if (!newValues.username || !newValues.password) {
             setShowErrorEmptyFields(true);
             return
@@ -63,26 +62,24 @@ function Login({navigation}) {
             password: '',
         });
     }
-    
     return (
+        
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Header centerComponent={{text: 'Budget Tracker', style: {color: "#fff"}}}/>
         <Input
           id='username'
           placeholder='username*'
           leftIcon={{  name: 'person-outline' }}
-          onChangeText={text => setUsername(text)}
+          onChangeText={handleChangeUsername}
           value={username}
-          onChange={handleChangeUsername}
         />
         <Input
          id='password'
           placeholder='password*'
           leftIcon={{type:'ionicon',  name: 'lock-closed-outline' }}
-          onChangeText={text => setPassword(text)}
+          onChangeText={handleChangePassword}
           value={password}
           secureTextEntry={!showPassword}
-          onChange={handleChangePassword}
           rightIcon={
             <Icon
             name={showPassword ? 'eye-off-outline' : 'eye-outline'}

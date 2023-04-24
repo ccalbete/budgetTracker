@@ -1,7 +1,6 @@
 import React from "react";
 import Login from "./../components/pages/login/Login"
 import Home from "./../components/pages/home/Home"
-/* import { Routes, Route } from "react-router-dom"; */
 /* 
 import Expense from "./../components/pages/expense/Expense"
 import Income from "./../components//pages/income/Income"

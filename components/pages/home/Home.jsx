@@ -1,31 +1,23 @@
 
 import * as React from 'react';
-/* import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box'; */
-import Header from './../../common/header/Header'
-import Summary from "./fixedExpenses/FixedExpenses"
-import FixedExpenses from './summary/Summary';
+import { View } from 'react-native';
+import ExpensesChart from './ExpensesChart'
 
 
 function Home() {
 
     return (
         <>
-            <FixedExpenses/>
-            <Summary/>
-         {/*  <h1>Home</h1>    <Box sx={{ width: '100%' }}>
-                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid item xs={12}>
-                        <Header />
-                    </Grid>
-                    <Grid item xs={6} style={{ marginTop: "100px" }}>
-                        <FixedExpenses />
-                    </Grid>
-                    <Grid item xs={6} style={{ marginTop: "100px" }}>
-                        <Summary />
-                    </Grid>
-                </Grid>
-            </Box> */}
+         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+         <h2>pendientes</h2>
+         <ul>
+             <li>Elemento 1</li>
+             <li>Elemento 2</li>
+             <li>Elemento 3</li>
+        </ul>
+        <ExpensesChart/>
+         </View>
+        
         </>
     );
 }
